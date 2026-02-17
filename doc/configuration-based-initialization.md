@@ -16,9 +16,9 @@ The following code sample demonstrates how to initialize the SDK client using an
 The `Builder.FromConfiguration` method reads values from the provided configuration section and returns a builder instance, allowing you to override specific properties directly in code if needed before building the final client.
 
 ```csharp
-using PayQuicker.API;
+using PayQuickerSDK.Standard;
 using Microsoft.Extensions.Configuration;
-using Environment = PayQuicker.API.Environment;
+using Environment = PayQuickerSDK.Standard.Environment;
 
 namespace ConsoleApp;
 

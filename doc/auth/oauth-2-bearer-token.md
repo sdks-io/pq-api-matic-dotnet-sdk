@@ -22,8 +22,8 @@ Documentation for accessing and setting credentials for clientside.
 You must provide credentials in the client as shown in the following code snippet.
 
 ```csharp
-using PayQuicker.API;
-using PayQuicker.API.Authentication;
+using PayQuickerSDK.Standard;
+using PayQuickerSDK.Standard.Authentication;
 
 namespace ConsoleApp;
 

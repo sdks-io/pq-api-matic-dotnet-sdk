@@ -1,0 +1,24 @@
+// <copyright file="OAuthTokenExtensions.cs" company="APIMatic">
+// PayQuickerSDK.Standard
+//
+// This file was automatically generated for PayQuicker by APIMATIC v3.0 ( https://www.apimatic.io ).
+// </copyright>
+using System;
+using PayQuickerSDK.Standard.Models;
+
+namespace PayQuickerSDK.Standard.Authentication
+{
+    internal static class OAuthTokenExtensions
+    {
+        internal static bool IsTokenExpired(this OAuthToken token, TimeSpan? clockSkew)
+        {
+            if (token == null)
+            {
+                throw new InvalidOperationException("OAuth token is missing.");
+            }
+
+            if (token.Expiry == null) return true;
+            return token.Expiry < DateTimeOffset.UtcNow.Subtract(clockSkew ?? TimeSpan.Zero).ToUnixTimeSeconds();    
+        }
+    }
+}

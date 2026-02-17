@@ -21,9 +21,9 @@ The API client can be initialized as follows:
 
 ```csharp
 using Microsoft.Extensions.Logging;
-using PayQuicker.API;
-using PayQuicker.API.Authentication;
-using PayQuicker.API.Models;
+using PayQuickerSDK.Standard;
+using PayQuickerSDK.Standard.Authentication;
+using PayQuickerSDK.Standard.Models;
 using System.Collections.Generic;
 
 namespace ConsoleApp;
@@ -49,7 +49,7 @@ PayQuickerSDKClient client = new PayQuickerSDKClient.Builder()
     .HttpClientConfig(httpClientConfig =>
         httpClientConfig.Timeout(TimeSpan.FromSeconds(100)))
     .XMyPayQuickerVersion("2026.02.01")
-    .Environment(PayQuicker.API.Environment.Sandbox)
+    .Environment(PayQuickerSDK.Standard.Environment.Sandbox)
     .SandboxInstance(SandboxInstance.Sandbox)
     .UatInstance(UatInstance.Uat1)
     .LoggingConfig(config => config
@@ -63,7 +63,7 @@ PayQuickerSDKClient client = new PayQuickerSDKClient.Builder()
 ## Configuration-Based Initialization
 
 ```csharp
-using PayQuicker.API;
+using PayQuickerSDK.Standard;
 using Microsoft.Extensions.Configuration;
 
 namespace ConsoleApp;
